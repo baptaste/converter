@@ -12,7 +12,9 @@ import data from 'src/data/currencies';
 const App = () => (
   <div className="app">
     <Header />
-    <Currencies currencies={data}/>
+    <Currencies
+      currencies={data}
+    />
     <Footer />
   </div>
 );
