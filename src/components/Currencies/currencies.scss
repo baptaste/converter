@@ -1,0 +1,28 @@
+@use 'src/styles/vars';
+
+.currencies__list {
+  max-height: 350px;
+  overflow-y: scroll;
+  color: vars.$primary;
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1rem 0 0;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid vars.$secondary;
+  }
+
+  &__currency {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid vars.$secondary;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$secondary;
+    }
+  }
+}

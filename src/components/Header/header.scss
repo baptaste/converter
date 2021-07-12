@@ -1,0 +1,19 @@
+@use 'src/styles/vars';
+
+.header {
+  padding: 2.5em 3em;
+  text-align: center;
+  background-color: vars.$primary;
+  color: white;
+
+  &__title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 2em;
+    font-weight: vars.$thinFont;
+  }
+}
