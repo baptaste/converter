@@ -8,7 +8,6 @@ const Currencies = ({ currencies }) => (
     {currencies.map((currency) => (
       <li
         key={currency.name}
-        onClick={() => console.log(`${currency.rate} ${currency.name}`)}
         className="currencies__list__currency"
       >
         {currency.name}
@@ -21,6 +20,7 @@ Currencies.propTypes = {
   currencies: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
+      rate: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };
