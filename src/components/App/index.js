@@ -9,6 +9,7 @@ import Currencies from 'src/components/Currencies';
 import Footer from 'src/components/Footer';
 import Toggler from 'src/components/Toggler';
 import data from 'src/data/currencies';
+import currencies from '../../data/currencies';
 
 // == Composant
 
@@ -19,15 +20,23 @@ class App extends Component {
     this.state = {
       isListOpen: true,
       baseAmount: 1,
-      selectedCurrency: 'Japanese Yen',
+      selectedCurrency: 'United States Dollar',
     };
 
     this.handleToggleClick = this.handleToggleClick.bind(this);
+    this.handleCurrencyClick = this.handleCurrencyClick.bind(this);
   }
 
   handleToggleClick() {
     this.setState({
       isListOpen: !this.state.isListOpen,
+    });
+  }
+
+  handleCurrencyClick(e) {
+    const clickedCurrency = e.target.textContent;
+    this.setState({
+      selectedCurrency: clickedCurrency,
     });
   }
 
@@ -49,9 +58,10 @@ class App extends Component {
           isOpen={this.state.isListOpen}
           onToggle={this.handleToggleClick}
         />
-        {this.state.isListOpen && <Currencies currencies={data} />}
+        {this.state.isListOpen
+        && <Currencies currencies={data} target={this.handleCurrencyClick} />}
         <Footer
-          currency={this.state.selectedCurrency}
+          currencyName={this.state.selectedCurrency}
           value={this.makeConversion()}
         />
       </div>
