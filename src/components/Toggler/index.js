@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './toggler.scss';
 
-const Toggler = ({ isOpen, onToggle }) => (
+const Toggler = ({ isTogglerOpen, onToggle }) => (
   <button
-    className={isOpen ? 'toggler toggler--open' : 'toggler'}
+    className={isTogglerOpen ? 'toggler toggler--open' : 'toggler'}
     type="button"
     onClick={onToggle}
   >
@@ -13,7 +13,7 @@ const Toggler = ({ isOpen, onToggle }) => (
 );
 
 Toggler.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  isTogglerOpen: PropTypes.bool.isRequired,
   // nouveauté : premiere prop de type fonction
   onToggle: PropTypes.func.isRequired,
 };

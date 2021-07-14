@@ -9,7 +9,6 @@ import Currencies from 'src/components/Currencies';
 import Footer from 'src/components/Footer';
 import Toggler from 'src/components/Toggler';
 import data from 'src/data/currencies';
-import currencies from '../../data/currencies';
 
 // == Composant
 
@@ -19,12 +18,15 @@ class App extends Component {
 
     this.state = {
       isListOpen: true,
+      isFormOpen: false,
       baseAmount: 1,
       selectedCurrency: 'United States Dollar',
     };
 
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleCurrencyClick = this.handleCurrencyClick.bind(this);
+    this.handleChangeAmount = this.handleChangeAmount.bind(this);
+    this.handleFormBtnClick = this.handleFormBtnClick.bind(this);
   }
 
   handleToggleClick() {
@@ -33,10 +35,23 @@ class App extends Component {
     });
   }
 
+  handleFormBtnClick() {
+    this.setState({
+      isFormOpen: !this.state.isFormOpen,
+    });
+  }
+
   handleCurrencyClick(e) {
     const clickedCurrency = e.target.textContent;
     this.setState({
       selectedCurrency: clickedCurrency,
+    });
+  }
+
+  handleChangeAmount(e) {
+    const newBaseAmount = e.target.value;
+    this.setState({
+      baseAmount: newBaseAmount,
     });
   }
 
@@ -53,9 +68,14 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Header baseAmount={this.state.baseAmount} />
+        <Header
+          baseAmount={this.state.baseAmount}
+          newBase={this.handleChangeAmount}
+          isFormOpen={this.state.isFormOpen}
+          onToggle={this.handleFormBtnClick}
+        />
         <Toggler
-          isOpen={this.state.isListOpen}
+          isTogglerOpen={this.state.isListOpen}
           onToggle={this.handleToggleClick}
         />
         {this.state.isListOpen
