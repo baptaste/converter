@@ -45,9 +45,9 @@
     transition: background-color 150ms ease-out;
 
     &:hover {
-      background-color: vars.$secondary;
+      background-color: vars.$hoveredText;
     }
   }
 
-  
+
 }

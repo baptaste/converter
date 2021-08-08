@@ -3,7 +3,7 @@
 .currencies__list {
   max-height: 350px;
   overflow-y: scroll;
-  color: vars.$primary;
+  color: vars.$text;
 
   &__title {
     font-size: 1.5em;
@@ -25,5 +25,5 @@
       background-color: vars.$secondary;
     }
   }
-  
+
 }

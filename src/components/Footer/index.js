@@ -5,7 +5,11 @@ import './footer.scss';
 
 const Footer = ({ currencyName, value }) => (
   <footer className="footer">
-    <CountUp decimals={2} className="footer__value" end={value} />
+    <CountUp
+      decimals={2}
+      end={value}
+      className="footer__value"
+    />
     <h2 className="footer__current-currency">{currencyName}</h2>
   </footer>
 );

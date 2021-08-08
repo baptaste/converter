@@ -13,7 +13,7 @@ const Currencies = ({ currencies, target }) => (
       >
         {currency.name}
       </li>
-    ))};
+    ))}
   </ul>
 );
 
@@ -22,7 +22,7 @@ Currencies.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       rate: PropTypes.number.isRequired,
-      target: PropTypes.func.isRequired,
+      target: PropTypes.func,
     }).isRequired,
   ).isRequired,
 };

@@ -32,7 +32,7 @@ const Header = ({
 
 Header.propTypes = {
   baseAmount: PropTypes.number.isRequired,
-  newBase: PropTypes.number.isRequired,
+  newBase: PropTypes.func.isRequired,
   isFormOpen: PropTypes.bool.isRequired,
   onToggle: PropTypes.func.isRequired,
 };

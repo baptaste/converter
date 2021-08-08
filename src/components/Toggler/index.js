@@ -14,7 +14,6 @@ const Toggler = ({ isTogglerOpen, onToggle }) => (
 
 Toggler.propTypes = {
   isTogglerOpen: PropTypes.bool.isRequired,
-  // nouveauté : premiere prop de type fonction
   onToggle: PropTypes.func.isRequired,
 };
 

@@ -1,16 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
-// == Import npm
 import React, { Component } from 'react';
 
-// == Import
 import './app.scss';
 import Header from 'src/components/Header';
 import Currencies from 'src/components/Currencies';
 import Footer from 'src/components/Footer';
 import Toggler from 'src/components/Toggler';
 import data from 'src/data/currencies';
-
-// == Composant
 
 class App extends Component {
   constructor(props) {
@@ -58,10 +54,7 @@ class App extends Component {
   makeConversion() {
     // eslint-disable-next-line max-len
     const foundCurrency = data.find((currency) => currency.name === this.state.selectedCurrency);
-
     const result = foundCurrency.rate * this.state.baseAmount;
-
-    // on arroundi à deux décimales
     return Math.round(result * 100) / 100;
   }
 
@@ -89,5 +82,4 @@ class App extends Component {
   }
 }
 
-// == Export
 export default App;
